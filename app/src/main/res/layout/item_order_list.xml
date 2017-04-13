@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/layout_item">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="商品名"
+            android:textStyle="bold"/>
+
+        <com.joeykwok.yunposv1.custom.MyTextView
+            android:id="@+id/tv_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_item_name"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="0000030101"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/num_title"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/text_round_border"
+            android:gravity="center"
+            android:text="数量"
+            android:textColor="@color/colorGoogle2"/>
+
+        <com.joeykwok.yunposv1.custom.MyTextView
+            android:id="@+id/tv_num"
+            android:layout_toRightOf="@+id/num_title"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="1.000"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/spec_title"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/text_round_border"
+            android:gravity="center"
+            android:text="规格"
+            android:textColor="@color/colorGoogle2"/>
+
+        <com.joeykwok.yunposv1.custom.MyTextView
+            android:id="@+id/tv_spec"
+            android:layout_toRightOf="@+id/spec_title"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="件"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/price_title"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:background="@drawable/text_round_border"
+                android:gravity="center"
+                android:text="单价"
+                android:textColor="@color/colorGoogle2"/>
+
+            <com.joeykwok.yunposv1.custom.MyTextView
+                android:id="@+id/tv_price"
+                android:layout_toRightOf="@+id/price_title"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical|right"
+                android:text="19.90"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/discount_title"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:background="@drawable/text_round_border"
+                android:gravity="center"
+                android:text="已优惠"
+                android:textColor="@color/colorGoogle2"/>
+
+            <com.joeykwok.yunposv1.custom.MyTextView
+                android:id="@+id/tv_discount"
+                android:layout_toRightOf="@+id/discount_title"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center_vertical|right"
+                android:text="-5.00" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.joeykwok.yunposv1.custom.MyTextView
+        android:id="@+id/tv_subtotal"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="14.90"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+</LinearLayout>

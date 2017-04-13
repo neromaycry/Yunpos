@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="500dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.joeykwok.yunposv1.fragment.PriceDialogFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="输入单价"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:background="@color/colorGoogle1"/>
+
+    <com.joeykwok.yunposv1.custom.MyEditText
+        android:id="@+id/et_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:letterSpacing="0.025"
+        android:padding="12dp"
+        android:textSize="16sp"
+        android:hint="输入单价"
+        android:inputType="number"/>
+
+</LinearLayout>

@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mxn.soul.flowingdrawer_core.FlowingDrawer xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    app:edMenuBackground="#dddddd"
+    app:edMenuSize="260dp"
+    app:edPosition="1">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/main_imgbg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.8"
+            android:scaleType="centerCrop"
+            android:src="@drawable/msp_1406_2118" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/main_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:title="长宇科技"
+                app:titleTextColor="#FFF">
+
+            </android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/main_toolbar"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/main_cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:layout_weight="4"
+                    app:cardCornerRadius="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginLeft="32dp"
+                                android:gravity="bottom"
+                                android:text="订单明细"
+                                android:textColor="#212121"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <mehdi.sakout.fancybuttons.FancyButton
+                                android:id="@+id/btn_dologin"
+                                android:layout_width="80dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="12dp"
+                                android:layout_marginRight="32dp"
+                                fancy:fb_borderWidth="0dp"
+                                fancy:fb_defaultColor="#fff"
+                                fancy:fb_focusColor="#9e9e9e"
+                                fancy:fb_text="清空"
+                                fancy:fb_textColor="#9e9e9e"
+                                fancy:fb_textSize="16sp" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp"
+                            android:background="#dddddd" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/order_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp"
+                            android:layout_weight="6"></android.support.v7.widget.RecyclerView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp"
+                            android:background="#dddddd" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="32dp"
+                            android:layout_marginRight="32dp"
+                            android:layout_weight="3"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2">
+
+                                <TextView
+                                    android:id="@+id/title1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="32dp"
+                                    android:text="小计" />
+
+                                <TextView
+                                    android:id="@+id/title2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/title1"
+                                    android:layout_marginTop="24dp"
+                                    android:text="优惠" />
+
+                                <TextView
+                                    android:id="@+id/title3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/title2"
+                                    android:layout_marginTop="24dp"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:text="总计" />
+
+                                <TextView
+                                    android:id="@+id/tv_subtotal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginTop="32dp"
+                                    android:text="0.00" />
+
+                                <TextView
+                                    android:id="@+id/tv_discount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/title1"
+                                    android:layout_marginTop="24dp"
+                                    android:text="0.00" />
+
+                                <TextView
+                                    android:id="@+id/tv_total"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_below="@+id/title2"
+                                    android:layout_marginTop="24dp"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:text="0.00" />
+
+                            </RelativeLayout>
+
+                            <mehdi.sakout.fancybuttons.FancyButton
+                                android:id="@+id/btn_checkout"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_weight="1"
+                                fancy:fb_borderColor="#e84e40"
+                                fancy:fb_borderWidth="1dp"
+                                fancy:fb_defaultColor="#fff"
+                                fancy:fb_focusColor="#e84e40"
+                                fancy:fb_text="结算"
+                                fancy:fb_textColor="#e84e40"
+                                fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/func_zone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="4"
+                        app:cardCornerRadius="2dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/bar_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:background="@color/colorGoogle1"
+                                android:gravity="bottom|right"
+                                android:paddingBottom="16dp"
+                                android:paddingRight="24dp"
+                                android:text="0"
+                                android:textColor="#FFF"
+                                android:textSize="40sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/bar_input"
+                                android:background="#dddddd"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    style="@style/layout_input_amount_style">
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="1"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="2"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="3"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_clear"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="清空"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/layout_input_amount_style">
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="4"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="5"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="6"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_add"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="@color/colorRed"
+                                        fancy:fb_focusColor="@color/colorAdd"
+                                        fancy:fb_text="添加"
+                                        fancy:fb_textColor="#FFF"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/layout_input_amount_style">
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="7"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_8"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="8"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_9"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="9"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_delete"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="删除"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/layout_input_amount_style">
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_dot"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="."
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/num_0"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="0"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="30sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_backspace"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="退格"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp">></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_amount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="数量"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    style="@style/layout_input_amount_style">
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_discount"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="优惠"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_dis_rate"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="折扣"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_dis_whole"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:layout_marginRight="1dp"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="整单优惠"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                    <mehdi.sakout.fancybuttons.FancyButton
+                                        android:id="@+id/btn_rate_whole"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        fancy:fb_borderWidth="0dp"
+                                        fancy:fb_defaultColor="#fff"
+                                        fancy:fb_focusColor="#dddddd"
+                                        fancy:fb_text="整单折扣"
+                                        fancy:fb_textColor="#212121"
+                                        fancy:fb_textSize="16sp"></mehdi.sakout.fancybuttons.FancyButton>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="2dp"></android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+    <com.mxn.soul.flowingdrawer_core.FlowingMenuLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/container_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+
+    </com.mxn.soul.flowingdrawer_core.FlowingMenuLayout>
+
+</com.mxn.soul.flowingdrawer_core.FlowingDrawer>
+
+
+

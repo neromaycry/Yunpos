@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.joeykwok.yunposv1.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_login" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/smooth_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:spb_sections_count="4"
+            app:spb_colors="@array/probar_color"
+            app:spb_speed="2.0"
+            app:spb_stroke_width="4dp"
+            app:spb_stroke_separator_length="4dp"
+            app:spb_reversed="true"
+            app:spb_mirror_mode="true"
+            app:spb_progressiveStart_activated="@bool/spb_default_progressiveStart_activated"
+            app:spb_progressiveStart_speed="1.5"
+            app:spb_progressiveStop_speed="3.4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.joeykwok.yunposv1.custom.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:text="POS"
+                android:textColor="#FFF"
+                android:textSize="60sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"></LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_user" />
+
+                <com.joeykwok.yunposv1.custom.MyEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="用户名"
+                    android:inputType="text"
+                    android:letterSpacing="0.025"
+                    android:padding="12dp"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="315dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#fff"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_password" />
+
+                <com.joeykwok.yunposv1.custom.MyEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="密码"
+                    android:inputType="textPassword"
+                    android:letterSpacing="0.025"
+                    android:padding="12dp"
+                    android:textColor="#fff"
+                    android:textColorHint="#fff"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="315dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:background="#fff"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/btn_dologin"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            fancy:fb_text="登录"
+            fancy:fb_textColor="#FFF"
+            fancy:fb_textSize="16sp"
+            fancy:fb_borderWidth="1dp"
+            fancy:fb_borderColor="#FFF"
+            fancy:fb_defaultColor="#0000"
+            fancy:fb_focusColor="#FFF"/>
+
+        <!--<Button-->
+            <!--android:layout_width="130dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="60dp"-->
+            <!--android:background="@drawable/border"-->
+            <!--android:letterSpacing="0.025"-->
+            <!--android:padding="10dp"-->
+            <!--android:text="Sign In"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="#fff"-->
+            <!--android:textSize="16dp" />-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="30dp"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<com.joeykwok.yunposv1.custom.MyTextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:letterSpacing="0.025"-->
+        <!--android:text="Don't have an account?"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="14dp" />-->
+
+        <!--<com.joeykwok.yunposv1.custom.MyTextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="5dp"-->
+        <!--android:letterSpacing="0.025"-->
+        <!--android:text="Sign up"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="14dp"-->
+        <!--android:textStyle="bold" />-->
+
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+
+</FrameLayout>
