@@ -1,2 +1,2 @@
-# YunposV1
-YunPOS Android Version
+# Yunpos
+YunPOS for Android pad
